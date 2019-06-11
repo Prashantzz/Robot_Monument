@@ -5,7 +5,7 @@ Library    SeleniumLibrary
 Scroll Page To Location
     [Arguments]    ${x_location}    ${y_location}
     Execute JavaScript    window.scrollTo(${x_location},${y_location})
-Select from drpdwn     
+Select from drpdwn
     [Arguments]    ${a}    ${b}   
     Execute Javascript     document.getElementsByClassName('dropdown-content')[${a}].childNodes[${b}].click()
 Select next
@@ -14,8 +14,8 @@ Select cart drpdwn
     [Arguments]    ${c}    ${d}
     Execute Javascript    document.getElementsByClassName('dropdown-content ')[${c}].childNodes[${d}].click()
 
-CheckoutProcess 
-   #Log in 
+CheckoutProcess
+   #Log in
     Input Text             ${txtBoxUser}                         &{LOG IN DATA}[username]
     Input Password         ${txtBoxpwd}                          &{LOG IN DATA}[password]
     Click Button           ${LoginButton}
@@ -26,7 +26,7 @@ CheckoutProcess
     Click Element          ${ChooseProduct}
     
     Sleep    10 
-    #Add project and quantity 
+    #Add project and quantity
     Click Button         ${AddPrjctBtn}
     Click Button         ${slctQty}
     Input Text           &{QtyTxtBox}[LocateQty]               &{QtyTxtBox}[QtyValue] 
@@ -36,7 +36,7 @@ CheckoutProcess
     
     Scroll Page To Location    0    2000 
     Sleep   10
-    #Upload image 
+    #Upload image
     Click Element        ${UploadBtn}  
     Sleep   5        
     Choose File          &{ChooseImg}[UploadBtn]    &{ChooseImg}[ImgPath] 
@@ -70,7 +70,8 @@ CheckoutProcess
     Select cart drpdwn     2                2  
     Sleep  5
     Click Button        ${Checkoutbtn}
-    Click Button        ${CrtPop}    
+    Click Button        ${CrtPop}  
+    Close Browser  
     
 *** Variables ***
 #This area is for locators and test data
